@@ -4,8 +4,8 @@ This Third Person Template is made for unity mobile applications.
 Contain
 -------
 - Third Person Camera Script
-- Player Movement Scrip
-- Input Controller UI
+- Player Movement Script
+- Joystick (UI & Script)
 
 Additional Information
 ----------------------
