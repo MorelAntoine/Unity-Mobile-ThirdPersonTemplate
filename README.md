@@ -1,2 +1,7 @@
 # Unity-Mobile-ThirdPersonTemplate
-Third person template made for Unity mobile applications
+
+Contain
+-------
+- Third Person Camera Script
+- Player Movement Scrip
+- Input Controller UI
