@@ -882,6 +882,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6762475104203307539, guid: 94c5a50f7916d5a4390983d7c233e7cd,
+        type: 3}
+      propertyPath: _hasRightAnchorPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762475104203307539, guid: 94c5a50f7916d5a4390983d7c233e7cd,
+        type: 3}
+      propertyPath: _hasAnchorPointOnTheRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762475104203307539, guid: 94c5a50f7916d5a4390983d7c233e7cd,
+        type: 3}
+      propertyPath: _rightAnchorPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6762475104203307551, guid: 94c5a50f7916d5a4390983d7c233e7cd,
         type: 3}
       propertyPath: m_Name
@@ -1451,6 +1466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762475104203307539, guid: 94c5a50f7916d5a4390983d7c233e7cd,
+        type: 3}
+      propertyPath: _isOnTheLeft
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6762475104203307551, guid: 94c5a50f7916d5a4390983d7c233e7cd,
         type: 3}

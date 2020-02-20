@@ -20,6 +20,13 @@ namespace ThirdPersonTemplate
         private Image _backgroundImage = null;
         private Image _controllerImage = null;
 
+        ///////////////////////////////////
+        ////////// Configuration //////////
+
+        [Header("Configuration")]
+        [SerializeField] private bool _rightAnchorPoint = false;
+        [SerializeField] private bool _topAnchorPoint = false;
+
         ///////////////////////////////////////////
         ////////// Generated Information //////////
 
@@ -87,8 +94,8 @@ namespace ThirdPersonTemplate
 
             inputVector.x = localPoint.x / _backgroundImage.rectTransform.sizeDelta.x;
             inputVector.y = localPoint.y / _backgroundImage.rectTransform.sizeDelta.y;
-            inputVectorClamped.x = inputVector.x * 2 - 1;
-            inputVectorClamped.y = inputVector.y * 2 - 1;
+            inputVectorClamped.x = inputVector.x * 2 + 1 * (_rightAnchorPoint ? 1 : -1);
+            inputVectorClamped.y = inputVector.y * 2 + 1 * (_topAnchorPoint ? 1 : -1);
             _virtualInput = inputVectorClamped.magnitude > 1.0f ? inputVectorClamped.normalized : inputVectorClamped;
         }
 
