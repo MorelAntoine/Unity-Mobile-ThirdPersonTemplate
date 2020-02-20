@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ThirdPersonTemplate
 {
@@ -16,17 +14,20 @@ namespace ThirdPersonTemplate
         ////////////////////////////////
         ////////// Components //////////
 
+        [Header("Components")]
         [SerializeField] private VirtualJoystick _inputSource = null;
+        [SerializeField] private Transform _relativeMovementSource = null;
 
         /////////////////////////////////////////
         ////////// Computing Resources //////////
 
-        [SerializeField] private Vector2 _input = Vector2.zero;
+        private Vector2 _input = Vector2.zero;
 
         //////////////////////////////
         ////////// Settings //////////
 
-        [SerializeField] private float _speed = 8f;
+        [Header("Setting")]
+        [SerializeField, Range(2f, 16f)] private float _movementSpeed = 8f;
 
         /////////////////////////////
         ////////// Methods //////////
@@ -37,17 +38,32 @@ namespace ThirdPersonTemplate
 
         private void FixedUpdate()
         {
-            float deltaHorizontalSpeed = _input.x * _speed * Time.fixedDeltaTime;
-            float deltaForwardSpeed = _input.y * _speed * Time.fixedDeltaTime;
-            Vector3 translation = new Vector3(deltaHorizontalSpeed, 0, deltaForwardSpeed);
+            if (_input != Vector2.zero)
+            {
+                Vector3 direction = _relativeMovementSource.forward * _input.y + _relativeMovementSource.right * _input.x;
 
-            translation = translation.magnitude > 1.0f ? translation.normalized : translation;
-            transform.Translate(translation);
+                direction.y = 0;
+                UpdateRotation(in direction);
+                UpdatePosition(in direction);
+            }
         }
 
         private void Update()
         {
             _input = _inputSource.VirtualInput;
+        }
+
+        //////////////////////////////
+        ////////// Services //////////
+
+        private void UpdatePosition(in Vector3 direction)
+        {
+            transform.Translate(direction * _movementSpeed * Time.fixedDeltaTime, Space.World);
+        }
+
+        private void UpdateRotation(in Vector3 direction)
+        {
+            transform.rotation = Quaternion.LookRotation(direction);
         }
     }
 }
