@@ -1832,8 +1832,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputSource: {fileID: 1234776157}
-  _input: {x: 0, y: 0}
-  _speed: 8
+  _relativeMovementSource: {fileID: 534669905}
+  _movementSpeed: 8
 --- !u!54 &2105338919
 Rigidbody:
   m_ObjectHideFlags: 0
