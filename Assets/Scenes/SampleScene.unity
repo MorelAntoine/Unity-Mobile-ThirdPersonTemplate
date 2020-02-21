@@ -662,7 +662,9 @@ MonoBehaviour:
   _inputSource: {fileID: 1775710215}
   _subject: {fileID: 2105338917}
   _distanceFromSubject: 5.5
-  _rotationSpeed: 80
+  _invertVerticalAxis: 0
+  _invertHorizontalAxis: 0
+  _rotationSpeed: 40
   _subjectOffset: {x: 0, y: 0, z: 0}
   _verticalLimit: 35
 --- !u!1 &558235941
