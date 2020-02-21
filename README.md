@@ -9,6 +9,12 @@ Contain
 
 Additional Information
 ----------------------
-Made with Unity 2018.4 LTS
+Made with Unity **2018.4 LTS**
 
-Made by Antoine Morel
+Made by **Antoine Morel**
+
+Version **1.0.0**
+
+# License
+
+LICENSE MIT
